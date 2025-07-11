@@ -20,10 +20,6 @@
                 {{ money.format(payment.amount, payment.currencyCode) }}
             </p>
 
-            {% if payment.method.gatewayConfig.factoryName == constant('Sylius\\MolliePlugin\\Payum\\Factory\\MollieGatewayFactory::FACTORY_NAME') %}
-                {% include '@SyliusMolliePlugin/Shop/DirectDebit/_form.html.twig' %}
-            {% endif %}
-
             {% if state != constant('Sylius\\Component\\Payment\\Model\\PaymentInterface::STATE_CART') %}
                 <p id="payment-status" {{ sylius_test_html_attribute('payment-state') }}>
                     {% include "@SyliusShop/Common/Order/Label/PaymentState/singlePaymentState.html.twig" with { 'state': state } %}
