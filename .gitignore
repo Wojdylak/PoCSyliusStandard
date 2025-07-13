@@ -51,3 +51,6 @@
 /yarn.lock
 /package-lock.json
 ###< symfony/webpack-encore-bundle ###
+
+sessions/
+sessions/.current-session
